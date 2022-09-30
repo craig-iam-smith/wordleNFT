@@ -1,3 +1,27 @@
+To get this started I grabbed the chainlink hardhat starter kit, with
+the entire readme from that below.
+
+This solidity smart contract setup is to provide on-chain infrastructure for the game wordle.
+1) NFT gate-keeper for game play
+  a) no NFT for non-tracked gameplay
+  b) NFT access - to track games played
+  c) NFT gating for tournament play
+  d) mint gameplay NFT
+  e) use gameplay NFT as gatekeeper for entrance to gameplay
+  f) use maps to keep track of players in a tournament
+2) use random number to seed games (chainlink VRF)
+  a) get a random number to seed word for solution
+  b) in tournament play propagate seed to all participants
+3) use keepers for tournament time management
+  a) need to design participation rules
+     invite list?
+     open play?
+     time that play starts etc.
+4) track stats of play - elapsed time for each word
+5) track stats of tournament play
+  a) issue NFT as "trophy"
+5) expand to fuller feature set
+
 <br/>
 <p align="center">
 <a href="https://chain.link" target="_blank">
@@ -6,36 +30,6 @@
 </p>
 <br/>
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/smartcontractkit/hardhat-starter-kit)
-
-- [Chainlink Hardhat Starter Kit](#chainlink-hardhat-starter-kit)
-- [Getting Started](#getting-started)
-  - [Requirements](#requirements)
-  - [Quickstart](#quickstart)
-    - [Typescript](#typescript)
-- [Usage](#usage)
-  - [Deploying Contracts](#deploying-contracts)
-  - [Run a Local Network](#run-a-local-network)
-  - [Using a Testnet or Live Network (like Mainnet or Polygon)](#using-a-testnet-or-live-network-like-mainnet-or-polygon)
-    - [Goerli Ethereum Testnet Setup](#goerli-ethereum-testnet-setup)
-  - [Forking](#forking)
-  - [Auto-Funding](#auto-funding)
-- [Test](#test)
-- [Interacting with Deployed Contracts](#interacting-with-deployed-contracts)
-  - [Chainlink Price Feeds](#chainlink-price-feeds)
-  - [Request & Receive Data](#request--receive-data)
-  - [VRF Get a random number](#vrf-get-a-random-number)
-  - [Keepers](#keepers)
-  - [Verify on Etherscan](#verify-on-etherscan)
-- [View Contracts Size](#view-contracts-size)
-- [Linting](#linting)
-- [Code Formatting](#code-formatting)
-- [Estimating Gas](#estimating-gas)
-- [Code Coverage](#code-coverage)
-- [Fuzzing](#fuzzing)
-- [Contributing](#contributing)
-- [Thank You!](#thank-you)
-  - [Resources](#resources)
 
 # Chainlink Hardhat Starter Kit
  Implementation of the following 4 Chainlink features using the [Hardhat](https://hardhat.org/) development environment:
