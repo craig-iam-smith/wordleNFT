@@ -18,7 +18,7 @@ contract Wordle is Ownable {
     gameStat[] public gameStats;
 
     mapping(address => gameStat[]) public GamesRecord;
-
+    mapping(address => bool) public _whitelist;
     
     
 
@@ -59,11 +59,16 @@ contract Wordle is Ownable {
 
 /// @dev implement whitelist TODO
 
-    modifier whitelisted(address account) {
-        /// @notice implement whitelist 
-        // if _whtelist[account] == false; {throw};
-        _;
+    function whitelist (address account) public onlyOwner {
+        _whitelist[account] = true;
+    }
+    function dewhitelist (address account) public onlyOwner {
+        _whitelist[account] = false;
+    }
 
+    modifier whitelisted(address account) {
+        require (_whitelist[account] == true);
+        _;
     }
 
     receive() external payable {}
